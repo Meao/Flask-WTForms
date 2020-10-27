@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>{{ title }}</title>
+  {% block styles %}{% endblock %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body class="{{ template }}">
+  <div class="container">
+    {% include 'header.html' %}
+    <div class="page-container">
+      <div class="content-container">
+        {% block content %}{% endblock %}
+      </div>
+      <div class="sidebar">
+        {% include 'side.html' %}
+      </div>
+    </div>
+    {% include 'footer.html' %}
+  </div>
+{#% include 'analytics.jinja2' %#}
+</body>
+
+</html>
